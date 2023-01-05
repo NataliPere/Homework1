@@ -1,5 +1,11 @@
 #pragma once
+#ifndef _PhoneBook_h_
+#define _PhoneBook_h_
+
+
 #include <string>
+#include <iostream>
+
 
 class PhoneBook
 {
@@ -49,12 +55,21 @@ private:
 
 };
 
-struct new_subscriber {} new1;
-void update_info(new_subscriber& N) {};
-void show_subscriber(new_subscriber N) {};
+
+struct new_subscriber {
+	std::string new_name;
+	std::string new_sername;
+	std::string new_patronymic;
+	std::string new_homePhoneNumber;
+	std::string new_mobilePhone;
+	int new_year = 1965;
+};
+
+void update_info(new_subscriber& N);
+void show_subscriber(new_subscriber N);
 
 
-
+#endif // !_PhoneBook_h_
 
 
 

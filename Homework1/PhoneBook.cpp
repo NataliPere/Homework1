@@ -1,6 +1,7 @@
 #include "PhoneBook.h"
 #include <iostream>
 
+
 PhoneBook::PhoneBook() {
 	_name = "DefaultName";
 	_homePhoneNumber = "365-55-44";
@@ -66,15 +67,6 @@ Subscriber::Subscriber() {
 	void Subscriber::setPatronymic(std::string& patronymic) {
 		_patronymic = patronymic;
 	}
-	struct new_subscriber {
-		std::string new_name;
-		std::string new_sername;
-		std::string new_patronymic;
-		std::string new_homePhoneNumber;
-		std::string new_mobilePhone;
-		int new_year;
-		
-	} new1;
 
 	void update_info(new_subscriber& N) {
 
@@ -87,7 +79,7 @@ Subscriber::Subscriber() {
 		std::cout << "5. Мобильный телефон." << "\n";
 		std::cout << "6. Год рождения." << "\n";
 
-
+		
 		std::cin >> info;
 		if (info <= 0 || info > 6)
 			std::cout << "Ошибка ввода" << "\n";
@@ -95,12 +87,12 @@ Subscriber::Subscriber() {
 		for (int i = 0; i < info; i++) {
 
 			switch (info) {
-			case 1: std::cout << "Введите имя абонента: "; std::cin >> N.new_name; break; return;
-			case 2: std::cout << "Введите фамилию абонента: "; std::cin >> N.new_sername; break; return;
-			case 3: std::cout << "Введите отчество абонента: "; std::cin >> N.new_patronymic; break; return;
-			case 4: std::cout << "Введите домашний телефон абонента: "; std::cin >> N.new_homePhoneNumber; break; return;
-			case 5: std::cout << "Введите мобильный телефон абонента: "; std::cin >> N.new_mobilePhone; break; return;
-			case 6: std::cout << "Введите год рождения абонента: "; std::cin >> N.new_year; break; return;
+			case 1: std::cout << "Введите имя абонента: "; std::cin >> N.new_name;
+			case 2: std::cout << "Введите фамилию абонента: "; std::cin >> N.new_sername;
+			case 3: std::cout << "Введите отчество абонента: "; std::cin >> N.new_patronymic;
+			case 4: std::cout << "Введите домашний телефон абонента: "; std::cin >> N.new_homePhoneNumber;
+			case 5: std::cout << "Введите мобильный телефон абонента: "; std::cin >> N.new_mobilePhone;
+			case 6: std::cout << "Введите год рождения абонента: "; std::cin >> N.new_year;
 
 			default: break; return;
 			}
@@ -110,7 +102,7 @@ Subscriber::Subscriber() {
 
 		void show_subscriber(new_subscriber N) {
 
-			std::cout << "Имя:" << N.new_name << "\n";
+			std::cout << "Имя:"<< N.new_name << "\n";
 			std::cout << "Фамилия:" << N.new_sername << "\n";
 			std::cout << "Отчество:" << N.new_patronymic << "\n";
 			std::cout << "Домашний телефон:" << N.new_homePhoneNumber << "\n";

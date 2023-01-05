@@ -11,8 +11,8 @@ int main() {
 
 	PhoneBook p1("Stanislav", "374-98-78", "8-985-987-75-78", 1986);
 
-	std::cout <<"Имя абонента: " << p1.getName() << "\n" <<"Домашний телефон абонента: " << p1.getHomePhoneNumber() << "\n"
-		<<"Мобильный телефон абонента: " << p1.getMobilePhone() << "\n" <<"Год рождения абонента: " << p1.getYearOfBirth() << "\n\n\n";
+	std::cout << "Имя абонента: " << p1.getName() << "\n" << "Домашний телефон абонента: " << p1.getHomePhoneNumber() << "\n"
+		<< "Мобильный телефон абонента: " << p1.getMobilePhone() << "\n" << "Год рождения абонента: " << p1.getYearOfBirth() << "\n\n\n";
 
 
 	Subscriber s1("Ivanov", "Vladimirovich");
@@ -40,18 +40,23 @@ int main() {
 	std::cout << "\n\n";
 
 	std::cout << "Вывод всех имён телефонной книги: \n";
-	std::cout << p1.getName() << "  " << p2.getName() <<"  \n";
-	
+	std::cout << p1.getName() << "  " << p2.getName() << "  \n";
+
 	std::cout << "Добавьте нового абонента в телефонную книгу:\n";
 	int info;
 	std::cout << "Введите _1_, чтобы добавить запись в телефонную книгу: " << "\n";
-	std::cout << "1. PhoneBook" << "\n";
 	std::cin >> info;
+
 	if (info <= 0 || info > 1)
 		std::cout << "Ошибка ввода";
 
+	new_subscriber new1;
+	new1.new_name = "exampleName";
+	new1.new_patronymic = "examplePatronymic";
+
 	switch (info) {
-	case 1: std::cout << "Введите новую информацию об абоненте: " <<"\n"; update_info(new1); show_subscriber(new1); break;
-	
+	case 1: std::cout << "Введите информацию о новом абоненте: " << "\n"; update_info(new1); show_subscriber(new1); break;
+
 	default: break;
+	}
 }
